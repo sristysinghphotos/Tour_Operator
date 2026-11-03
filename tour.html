@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ROAVENA helps you discover destinations and plan personalized journeys.">
+  <title>ROAVENA — Your Journey, Your Way</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="#home" class="brand" aria-label="Roavena home">
+      <span class="brand-mark">R.</span>
+      <span>ROAVENA</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#explore">Explore</a>
+      <a href="#about">Our philosophy</a>
+      <a href="#trips">My trips</a>
+      <a href="#favourites">Favourites <span id="favCount">0</span></a>
+    </nav>
+
+    <a href="#planner" class="nav-cta">Plan a trip ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-image"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow hero-kicker">A MORE PERSONAL WAY TO TRAVEL</p>
+        <h1>Go beyond<br>the <em>ordinary.</em></h1>
+        <p class="hero-description">
+          Find places that move you. Create journeys that feel like yours.
+        </p>
+        <div class="hero-actions">
+          <a href="#explore" class="button button-light">Discover destinations ↗</a>
+          <a href="#about" class="text-link">Our philosophy</a>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>YOUR JOURNEY, YOUR WAY.</span>
+        <span>01 / DISCOVER &nbsp; 02 / DESIGN &nbsp; 03 / DEPART</span>
+      </div>
+      <div class="hero-side-note">TRAVEL WITH MEANING</div>
+    </section>
+
+    <section class="intro section" id="about">
+      <p class="eyebrow">A DIFFERENT WAY TO TRAVEL</p>
+      <div class="intro-layout">
+        <div>
+          <h2>Travel is not a checklist.<br>It is a <em>feeling.</em></h2>
+          <p class="muted">
+            Roavena is a smart travel platform that connects travelers
+            and tour operators, making it easy to discover destinations,
+            plan personalized trips, create itineraries, and manage
+            journeys—all in one place.
+          </p>
+        </div>
+        <blockquote>
+          “Leave room for the moments you could never have planned.”
+        </blockquote>
+      </div>
+      <div class="intro-bottom">A WORLD OF POSSIBILITIES</div>
+    </section>
+
+    <section class="explore section" id="explore">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR SOMEWHERE</p>
+          <h2>Places to <em>fall for.</em></h2>
+        </div>
+        <p class="section-description">
+          From slow mornings to wild horizons, your next story starts here.
+        </p>
+      </div>
+
+      <div class="explore-controls">
+        <label class="search-box">
+          <span>⌕</span>
+          <input type="search" id="searchInput"
+            placeholder="Search destinations..." aria-label="Search destinations">
+        </label>
+
+        <div class="filter-list" aria-label="Filter destinations">
+          <button class="filter active" data-category="all">All places</button>
+          <button class="filter" data-category="nature">Nature</button>
+          <button class="filter" data-category="culture">Culture</button>
+          <button class="filter" data-category="adventure">Adventure</button>
+        </div>
+      </div>
+
+      <div class="destination-grid" id="destinationGrid">
+        <article class="destination-card"
+          data-id="amalfi" data-name="Amalfi Coast" data-category="nature culture">
+          <div class="destination-image image-amalfi">
+            <span class="destination-tag">COASTAL ESCAPE</span>
+            <button class="heart" data-id="amalfi"
+              aria-label="Add Amalfi Coast to favourites" aria-pressed="false">♡</button>
+          </div>
+          <div class="destination-info">
+            <div><p class="destination-country">ITALY · MEDITERRANEAN</p><h3>Amalfi Coast</h3></div>
+            <span class="destination-arrow">↗</span>
+          </div>
+          <p class="destination-caption">Colourful villages above the blue.</p>
+        </article>
+
+        <article class="destination-card"
+          data-id="banff" data-name="Banff" data-category="nature adventure">
+          <div class="destination-image image-banff">
+            <span class="destination-tag">WILD & FREE</span>
+            <button class="heart" data-id="banff"
+              aria-label="Add Banff to favourites" aria-pressed="false">♡</button>
+          </div>
+          <div class="destination-info">
+            <div><p class="destination-country">CANADA · ROCKY MOUNTAINS</p><h3>Banff</h3></div>
+            <span class="destination-arrow">↗</span>
+          </div>
+          <p class="destination-caption">Mountain air and endless blue lakes.</p>
+        </article>
+
+        <article class="destination-card"
+          data-id="kyoto" data-name="Kyoto" data-category="culture nature">
+          <div class="destination-image image-kyoto">
+            <span class="destination-tag">CULTURE & CALM</span>
+            <button class="heart" data-id="kyoto"
+              aria-label="Add Kyoto to favourites" aria-pressed="false">♡</button>
+          </div>
+          <div class="destination-info">
+            <div><p class="destination-country">JAPAN · OLD WORLD CHARM</p><h3>Kyoto</h3></div>
+            <span class="destination-arrow">↗</span>
+          </div>
+          <p class="destination-caption">Quiet temples and timeless streets.</p>
+        </article>
+
+        <article class="destination-card"
+          data-id="ladakh" data-name="Ladakh" data-category="nature adventure culture">
+          <div class="destination-image image-ladakh">
+            <span class="destination-tag">BEYOND THE ORDINARY</span>
+            <button class="heart" data-id="ladakh"
+              aria-label="Add Ladakh to favourites" aria-pressed="false">♡</button>
+          </div>
+          <div class="destination-info">
+            <div><p class="destination-country">INDIA · THE HIGH HIMALAYAS</p><h3>Ladakh</h3></div>
+            <span class="destination-arrow">↗</span>
+          </div>
+          <p class="destination-caption">Dramatic mountains, vast skies and silence.</p>
+        </article>
+      </div>
+
+      <p class="empty-message" id="emptyMessage" hidden>
+        No destinations found. Try another search.
+      </p>
+    </section>
+
+    <section class="quote-banner">
+      <p class="eyebrow">NOT JUST A PLACE ON A MAP</p>
+      <h2>Collect moments,<br><em>not just miles.</em></h2>
+      <a href="#planner" class="button button-light">Begin your journey ↗</a>
+    </section>
+
+    <section class="planner section" id="planner">
+      <div class="planner-copy">
+        <p class="eyebrow">YOUR NEXT CHAPTER</p>
+        <h2>Every great journey<br>starts with <em>a thought.</em></h2>
+        <p class="muted">
+          Give your next adventure a name. Save your idea and start shaping
+          a trip that is entirely your own.
+        </p>
+        <div class="planner-note">DREAM IT. PLAN IT. LIVE IT.</div>
+      </div>
+
+      <form class="planner-form" id="tripForm">
+        <p class="eyebrow">THE FIRST STEP</p>
+        <h3>Start a new trip</h3>
+
+        <label for="tripName">What shall we call it?</label>
+        <input type="text" id="tripName" name="tripName"
+          placeholder="e.g. Summer in the mountains" maxlength="70" required>
+
+        <label for="tripDestination">Where are you dreaming of?</label>
+        <select id="tripDestination" name="tripDestination" required>
+          <option value="">Choose a destination</option>
+          <option value="Amalfi Coast">Amalfi Coast, Italy</option>
+          <option value="Banff">Banff, Canada</option>
+          <option value="Kyoto">Kyoto, Japan</option>
+          <option value="Ladakh">Ladakh, India</option>
+        </select>
+
+        <button type="submit" class="button button-dark">Save trip idea ↗</button>
+        <p class="form-message" id="formMessage" role="status"></p>
+      </form>
+    </section>
+
+    <section class="collections section" id="favourites">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE PLACES THAT STAY WITH YOU</p>
+          <h2>Your little <em>wishlist.</em></h2>
+        </div>
+        <p class="section-description">Keep the places you love close.</p>
+      </div>
+      <div class="saved-list" id="favouritesList">
+        <p class="muted saved-empty">Your favourite destinations will appear here.</p>
+      </div>
+    </section>
+
+    <section class="collections trips-section section" id="trips">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FROM DAYDREAM TO DEPARTURE</p>
+          <h2>Your journey <em>begins here.</em></h2>
+        </div>
+        <a href="#planner" class="text-link">Create a trip ↗</a>
+      </div>
+      <div class="saved-list" id="tripsList">
+        <p class="muted saved-empty">Your saved trip ideas will appear here.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="brand footer-brand">
+      <span class="brand-mark">R.</span><span>ROAVENA</span>
+    </a>
+    <p>Your journey, your way.</p>
+    <a href="#home" class="back-top">BACK TO TOP ↑</a>
+    <div class="footer-bottom">
+      <span>© 2026 ROAVENA</span>
+      <span>MADE FOR THE WAY YOU WANT TO TRAVEL.</span>
+    </div>
+  </footer>
+</body>
+</html>
